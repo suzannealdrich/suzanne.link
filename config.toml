@@ -1,0 +1,4 @@
+baseURL = "https://suzannealdrich.gitlab.io/suzanne.link/"
+languageCode = "en-us"
+title = "Suzanne's Links"
+theme = "academic"

@@ -15,21 +15,57 @@ subtitle = ""
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
 
 [[feature]]
-  icon = "r-project"
+  icon = "drupal"
   icon_pack = "fab"
-  name = "R"
-  description = "90%"
+  name = "Drupal"
+  description = "70%"
+
+[[feature]]
+  icon = "wordpress"
+  icon_pack = "fab"
+  name = "WordPress"
+  description = "50%"
   
 [[feature]]
-  icon = "chart-line"
+  icon = "linux"
+  icon_pack = "fab"
+  name = "Linux"
+  description = "50%"
+
+[[feature]]
+  icon = "docker"
+  icon_pack = "fab"
+  name = "Docker"
+  description = "15%"
+
+[[feature]]
+  icon = "code"
   icon_pack = "fas"
-  name = "Statistics"
-  description = "100%"  
+  name = "Web Development"
+  description = "75%"
+
+[[feature]]
+  icon = "php"
+  icon_pack = "fab"
+  name = "PHP"
+  description = "25%"
+
+[[feature]]
+  icon = "js"
+  icon_pack = "fab"
+  name = "JavaScript"
+  description = "25%"  
+
+[[feature]]
+  icon = "git"
+  icon_pack = "fab"
+  name = "Git"
+  description = "50%"  
   
 [[feature]]
   icon = "camera-retro"
   icon_pack = "fas"
   name = "Photography"
-  description = "10%"
+  description = "50%"
 
 +++
