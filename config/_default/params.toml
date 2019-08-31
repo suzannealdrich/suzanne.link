@@ -1,15 +1,24 @@
 # SITE SETUP
 # Documentation: https://sourcethemes.com/academic/
 
-# Color theme.
-#   Choose from `default`, `ocean`, `forest`, `dark`, `apogee`, `1950s`, `coffee`, `rose`, `strawberry`, `mr_robot`.
-color_theme = "dark"
+# Choose a theme.
+#   Latest themes (may require updating Academic): https://sourcethemes.com/academic/themes/
+#   Browse built-in themes in `themes/academic/data/themes/`
+#   Browse user installed themes in `data/themes/`
+theme = "dark"
+
 # Enable users to switch between day and night mode?
 day_night = true
 
-# Font style.
-#   Choose from `default`, `classic`, `rose`, or `mr_robot`.
-font = "default"
+# Overrride the theme's font set (optional).
+#   Latest font sets (may require updating Academic): https://sourcethemes.com/academic/themes/
+#   Browse built-in font sets in `themes/academic/data/fonts/`
+#   Browse user installed font sets in `data/fonts/`
+font = "minimal"
+
+# Choose a font size.
+# Sizes: s (small), m (medium), l (large)
+font_size = "m"
 
 # Description for social sharing and search engines. If undefined, superuser role is used in place.
 description = ""
@@ -20,7 +29,7 @@ sharing_image = ""
 # Twitter username (without @). Used when a vistor shares your site on Twitter.
 twitter = "SuzanneAldrich"
 
-# Diplay a logo in navigation bar rather than title (optional).
+# Display a logo in navigation bar rather than title (optional).
 #   To enable, place an image in `static/img/` and reference its filename below. To disable, set the value to "".
 logo = ""
 
@@ -45,7 +54,7 @@ privacy_pack = false
 
 # Enable visitors to edit pages?
 # `repo` defines the repository URL. `editable` defines which page types can be edited.
-edit_page = {repo_url = "https://gitlab.com/suzannealdrich/suzanne.link", editable = {docs = true, page = false, post = false}}
+edit_page = {repo_url = "https://gitlab.com/suzannealdrich/suzanne.link", repo_branch = "master", editable = {docs = true, page = false, post = false}}
 
 # Date and time format (refer to https://sourcethemes.com/academic/docs/customization/#date-format )
 #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
@@ -158,7 +167,7 @@ sharing = true
   engine = 1
 
   # Which page types are commentable?
-  commentable = {page = false, post = true, docs = false}
+  commentable = {page = false, post = true, docs = true, project = true, publication = true, talk = true}
 
   # Configuration of Disqus.
   [comments.disqus]
