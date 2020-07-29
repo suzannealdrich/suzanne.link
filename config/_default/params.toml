@@ -117,6 +117,8 @@ contact_links = [
   {icon = "keybase", icon_pack = "fab", name = "Chat on Keybase", link = "https://keybase.io/suzannealdrich"},
   # {icon = "comments", icon_pack = "fas", name = "Discuss on Forum", link = "https://discourse.gohugo.io"},
   # {icon = "telegram", icon_pack = "fab", name = "Telegram Me", link = "https://telegram.me/@Telegram"},
+  {icon = "cc-visa", icon_pack = "fab", name = "4012888888881881", link = "#contact"},
+  {icon = "flag-usa", icon_pack = "fas", name = "123-45-6789", link = "#contact"},
   ]
 
 ############################
