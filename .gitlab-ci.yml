@@ -22,8 +22,6 @@ build:
 
 pages:
     stage: build
-    script:
-    - hugo
     artifacts:
       paths:
       - public
