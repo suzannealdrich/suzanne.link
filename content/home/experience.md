@@ -18,12 +18,28 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
+  title = "Solutions Engineer Manager"
+  company = "Cloudflare"
+  company_url = "https://www.cloudflare.com/"
+  location = "San Francisco, California"
+  date_start = "2018-09-15"
+  date_end = ""
+  description = """
+  Leading the West and Central North America Field Solutions teams.
+
+  * Coaching individual contributors & providing guidance and support for their career goals.
+  * Balancing team work load and delegating responsibility to team leads.
+  * Enabling team with the skills and knowledge they need to be successful Solutions Engineers.
+  * Working with cross functional leads across the organization to coordinate the design of scalable, secure, and performant solutions that enable the success of our most strategic enterprise customers.
+  """
+
+[[experience]]
   title = "Solutions Engineer Team Lead"
   company = "Cloudflare"
   company_url = "https://www.cloudflare.com/"
   location = "San Francisco, California"
   date_start = "2016-07-15"
-  date_end = ""
+  date_end = "2018-09-15"
   description = """
   Leading a team of solutions engineers.
 
