@@ -3,30 +3,41 @@ variables:
   S3_BUCKET_NAME: "suzanne.link"
 
 stages: 
-    - build
-    - deploy
+  - test
+  - build
+  - deploy
 
 cache:
-    paths:
+  paths:
     - public
 
-pages:
-    image: registry.gitlab.com/pages/hugo/hugo_extended:latest
-    stage: build
-    only:
-    - master
-    before_script:
-    - apk add --update --no-cache git
-    script:
+test:
+  image: registry.gitlab.com/pages/hugo/hugo_extended:latest
+  stage: test
+  except:
+    - master    
+  before_script:
+    - apk add --update --no-cache git    
+  script:
     - hugo
-    artifacts:
-      paths:
+
+pages:
+  image: registry.gitlab.com/pages/hugo/hugo_extended:latest
+  stage: build
+  only:
+    - master
+  before_script:
+    - apk add --update --no-cache git
+  script:
+    - hugo
+  artifacts:
+    paths:
       - public    
 
 s3:
-    image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
-    stage: deploy
-    only:
+  image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
+  stage: deploy
+  only:
     - master
-    script:
+  script:
     - aws s3 sync public s3://$S3_BUCKET_NAME
