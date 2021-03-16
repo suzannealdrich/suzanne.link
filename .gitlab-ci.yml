@@ -15,7 +15,7 @@ test:
   image: registry.gitlab.com/pages/hugo/hugo_extended:latest
   stage: test
   except:
-    - master    
+    - main    
   before_script:
     - apk add --update --no-cache git    
   script:
@@ -25,7 +25,7 @@ pages:
   image: registry.gitlab.com/pages/hugo/hugo_extended:latest
   stage: build
   only:
-    - master
+    - main
   before_script:
     - apk add --update --no-cache git
   script:
@@ -38,6 +38,6 @@ s3:
   image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
   stage: deploy
   only:
-    - master
+    - main
   script:
     - aws s3 sync public s3://$S3_BUCKET_NAME
