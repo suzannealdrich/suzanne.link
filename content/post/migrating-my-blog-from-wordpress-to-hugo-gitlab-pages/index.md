@@ -9,7 +9,7 @@ tags: [technology]
 categories: []
 date: 2019-08-31T22:59:53-07:00
 lastmod: 2019-08-31T22:59:53-07:00
-featured: false
+featured: true
 draft: true
 
 # Featured image
@@ -49,7 +49,7 @@ Gutenberg doesn't yet properly support Markdown footnotes, which my posts utiliz
 Although the Jetpack implementation of Markdown still supports my articles' footnotes in a fashion, it doesn't allow me to edit the Markdown version anymore, instead presenting HTML for all these notations in the code editor. The same footnote now becomes an impossible-to-edit horror:
 
 ```html
-<sup id="fnref-30-1"><a href="#fn-30-1" rel="footnote">1</a></sup>
+“Iranian President Mahmoud Ahmadinejad said [in November 2010] that malicious computer code launched by “enemies” of the state had sabotaged centrifuges used in Iran’s nuclear-enrichment program.”<sup id="fnref-30-1"><a href="#fn-30-1" rel="footnote">1</a></sup>
 ```
 
 ```html
