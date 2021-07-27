@@ -23,7 +23,23 @@ date_format = "Jan 2006"
   company_url = "https://www.cloudflare.com/"
   location = "San Francisco, California"
   date_start = "2016-07-15"
-  date_end = ""
+  date_end = "2021-06-04"
+  description = """
+  Leading a team of solutions engineers.
+
+  * Recruiting, interviewing, and hiring new members to grow the team.
+  * Supporting all team members with regular 1-on-1 meetings, coaching, and facilitating bi-directional feedback.
+  * Escalation point for all team issues.
+  * Developing a modular enterprise customer onboarding program.
+  """
+
+[[experience]]
+  title = "Solutions Engineer Team Lead"
+  company = "Cloudflare"
+  company_url = "https://www.cloudflare.com/"
+  location = "San Francisco, California"
+  date_start = "2016-07-15"
+  date_end = "2021-06-04"
   description = """
   Leading a team of solutions engineers.
 

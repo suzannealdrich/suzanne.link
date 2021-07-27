@@ -9,8 +9,8 @@ tags: [technology]
 categories: []
 date: 2019-08-31T22:59:53-07:00
 lastmod: 2019-08-31T22:59:53-07:00
-featured: true
-draft: true
+featured: false
+draft: false
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
@@ -70,23 +70,76 @@ Another reason to contemplate discontinuing the use of Jetpack is that it's a fa
 
 ## WordPress Site vs. Static Site
 
-It's not really a fair comparison, as there are many differences between what each kind of publishing system can accommodate in terms of editor experience, or personalized content. With WordPress, you're starting from a fully WYSIWYG editorial workflow integrated within the application, and producing a dynamically generated website utilizing this world-class content management system. Underlying this software is a thick stack of PHP application servers, databases, and file systems, and of course an operating system. With Hugo and GitLab Pages, you're moving to a Markdown formatted editorial experience driven by a Git and CI/CD workflow in order to generate static HTML and asset files that are served by a simple webserver with minimal configuration potential. There are a lot of security and performance metrics that will be affected by such a move, most of them in a positive direction. You're no longer worrying about OS and PHP security patches and optimizing the configuration and implementing caching at all levels to achieve a decent server response time, even if you were using managed services to mitigate a lot of the human toil involved in making that happen. Rather, this concern almost completely disappears. Instead, it's a matter of ensuring you have a development workflow following security best practices, and a fast CI/CD platform to deploy your project quickly. I think I've found that magical combination with GitLab Pages and Hugo, which I ultimately chose as the new solution for publishing my blog.
+It's not really a fair comparison, as there are many differences between what each kind of publishing system can accommodate in terms of editor experience, or personalized content. With WordPress, you're starting from a fully WYSIWYG editorial workflow integrated within the application, and producing a dynamically generated website utilizing this world-class content management system. Underlying this software is a thick stack of PHP application servers, databases, and file systems, and of course an operating system. With Hugo and GitLab Pages, you're moving to a Markdown formatted editorial experience driven by a Git and CI/CD workflow in order to generate static HTML and asset files that are served by a simple webserver with minimal configuration potential. There are a lot of security and performance metrics that will be affected by such a move, most of them in a positive direction. You're no longer worrying about OS and PHP security patches and optimizing the configuration and implementing caching at all levels to achieve a decent server response time, even if you were using managed services to mitigate a lot of the human toil involved in making that happen. Rather, this concern almost completely disappears. Instead, it's a matter of ensuring you have a development workflow following security best practices, and a fast site building platform to generate your project quickly. I'd found that magical combination with GitLab Pages and Hugo, which I ultimately chose as the new solution for publishing my blog.
 
 ## Hugo
 
+Why [Hugo](https://gohugo.io/), you might ask? Hugo is built with Go, which is known for having a fast runtime. I'd used Jekyll (Ruby) and Sculpin (PHP) previously, but both generators were slow to build large amounts of content. Another compelling reason for using Hugo was the large ecosystem of themes and starter kits, a passionate user community, and extensive documentation built around the project that would surely would make it easier for developers like me to get up and running, and find support when I had any issues.
+
 ### Installing Hugo
 
-brew install hugo
-dependencies: go
+First thing's first: getting Hugo installed. Assuming you're using Homebrew (you ARE using [Homebrew](https://brew.sh/), aren't you?!?) 
+
+```
+brew install git golang hugo
+```
+
+{{% alert note %}}
+Dependencies: go, git
+{{% /alert %}}
+
+You'll want to make sure to follow any specific instructions provided by Homebrew about completing the installation & configuration of `go`, including appending the binary location to the `PATH` in your shell configuration.
 
 ### Starting With Hugo Academic Kickstart
 
-[Academic Kickstart](https://github.com/sourcethemes/academic-kickstart)
+To make life a lot easier, I used the [Academic Kickstart](https://wowchemy.com/docs/getting-started/), which provided a script that gets you up and running with a very nice looking academic portfolio, and supported all the features I needed out of the box.
 
+{{% alert note %}}
+Hugo Extended is required for building your site with Academic Kickstart.
+{{% /alert %}}
+
+First I cloned the repository to my local dev system:
+
+```
+git clone git@github.com:sourcethemes/academic-kickstart.git
+```
+
+Next, I ran the provided script to initialize my new site with a curated assortment of useful homepage widgets and portfolio pages:
+
+```
+./scripts/init_kickstart.sh
+```
+
+### Customizing Hugo Academic Kickstart
+
+With this framework in place, I was able to alter all the default site configuration, homepage widgets, and other provided examples to suit my needs, and remove or comment out items I didn't need. Here is an example of a custom widget for the homepage Experience section:
+
+```
+[[experience]]
+  title = "Owner"
+  company = "SJA Consulting"
+  company_url = "https://www.sjaconsulting.com/"
+  location = "Northern California"
+  date_start = "1997-06-01"
+  date_end = ""
+  description = """
+  SJA Consulting provides small organizations with comprehensive services from website development to IT consulting. Designing a usable web requires a commitment to high standards of form and function. Specializing in developing aesthetic solutions utilizing open-source technologies, we’ve succeeded in delivering cost-effective systems that are easy to use.
+
+  * Expert Drupal, WordPress, and Hugo implementations, upgrades, maintenance, and support.
+  * Custom theme and module development.
+  * Usable and secure sites that stand the test of time.
+  * Genuine interest in client requirements and user needs.
+  """
+```
+
+
+At the end of this process, my site was already looking a lot cleaner, and loading much faster, than it ever did with WordPress. Plus, I wasn't running any servers! Like I was saying, the Easy Button. Use it.
 
 ### Planning Content Organization
 
-### Customizing Hugo Academic Kickstart
+
+
+
 
 ## Hosting on GitLab Pages
 
