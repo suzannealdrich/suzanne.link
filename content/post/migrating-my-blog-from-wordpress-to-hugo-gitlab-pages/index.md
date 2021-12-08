@@ -132,30 +132,32 @@ With this framework in place, I was able to alter all the default site configura
   """
 ```
 
-
-At the end of this process, my site was already looking a lot cleaner, and loading much faster, than it ever did with WordPress. Plus, I wasn't running any servers! Like I was saying, the Easy Button. Use it.
+At the end of this process, my site was already looking a lot cleaner, and loading much faster, than it ever did with WordPress. Plus, no more application servers! Like I keep saying: the Easy Button. Use it.
 
 ### Planning Content Organization
 
-
-
-
+I had a fairly simple content use case on my WordPress site, primarily consisting of posts and a couple of static images included in some posts. So, all the old content could live under the `/post` folder, and I could use Cloudflare Page Rules to redirect users from the old URLs to the new ones.
 
 ## Hosting on GitLab Pages
 
-https://gohugo.io/hosting-and-deployment/hosting-on-gitlab/
+Getting setup on GitLab to build and host your Hugo site is fairly straightforward with all the great guides. I used these tutorials and documentation to get me up and running and to customize my configuration:
 
-https://about.gitlab.com/2016/04/07/gitlab-pages-setup/
+* [Hosting on GitLab](https://gohugo.io/hosting-and-deployment/hosting-on-gitlab/)
 
-[What is GitLab Pages?](https://about.gitlab.com/product/pages/)
+* [GitLab Pages Setup](https://about.gitlab.com/2016/04/07/gitlab-pages-setup/)
+
+* [What is GitLab Pages?](https://about.gitlab.com/product/pages/)
+
+* [GitLab Pages Documentation](https://docs.gitlab.com/ee/user/project/pages/)
+
+* [Exploring GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/introduction.html)
 
 ### Adding GitLab Project
 
+The first step is to add a project in GitLab. You'll want to choose a good username and project name, as these will be used to access your pages before you assign a custom domain name.
+
 ### Configuring GitLab Pages
 
-[GitLab Pages Documentation](https://docs.gitlab.com/ee/user/project/pages/)
-
-[Exploring GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/introduction.html)
 
 ### Adding .gitlab-ci.yml for Hugo
 
