@@ -136,7 +136,7 @@ At the end of this process, my site was already looking a lot cleaner, and loadi
 
 ### Planning Content Organization
 
-I had a fairly simple content use case on my WordPress site, primarily consisting of posts and a couple of static images included in some posts. So, all the old content could live under the `/post` folder, and I could use Cloudflare Page Rules to redirect users from the old URLs to the new ones.
+I had a fairly simple content use case on my WordPress site, primarily consisting of posts and a couple of static images included in some posts. So, all the old content could live under the `/post` folder, and I could use [Cloudflare Page Rules](https://support.cloudflare.com/hc/en-us/sections/200805137-General) to redirect users from the old URLs to the new ones.
 
 ## Hosting on GitLab Pages
 
@@ -158,15 +158,13 @@ The first step is to add a project in GitLab. You'll want to choose a good usern
 
 ### Configuring GitLab Pages
 
+GitLab Pages needs to be given specific instructions on how to build your particular project using a `.gitlab-ci.yml` GitLab CI (Continuous Integration) configuration file. You have some choices for how to get started. You can fork a sample GitLab Pages project, start with a GitLab Pages project template, create a `.gitlab-ci.yml` file from scratch, or use a template for this type of configuration file. 
 
 ### Adding .gitlab-ci.yml for Hugo
 
-[GitLab Pages Hugo example](https://gitlab.com/pages/hugo)
+Since my site was already built with the Hugo Academic template, it made the most sense to add the GitLab CI configuration file from a template for Hugo built Pages. The [GitLab Pages Hugo example](https://gitlab.com/pages/hugo) got me started, but since the Hugo Academic template required the extended Hugo version, I needed to find a workaround so that I could build my site properly on GitLab Pages, without error. Luckily, I found the [fix documented in this issue](https://gitlab.com/pages/hugo/issues/32):
 
-Build site with Hugo extended.
-Workaround for pages/hugo#32 bug
-Git executable not found in $PATH
-https://gitlab.com/pages/hugo/issues/32
+#### Workaround for pages/hugo#32 bug Git executable not found in $PATH
 
 ```yaml
 before_script:
@@ -175,15 +173,68 @@ before_script:
 
 ## Migrating WordPress Posts
 
-https://sourcethemes.com/academic/docs/migrate-from-wordpress/
+Now we get to the really fun part: content migration. This was actually quite enjoyable, as I'd done a really good job in planning out the new site structure to accommodate my old site content. The main work was a matter of extracting all the posts I'd written out of the WordPress database, converting my content to Markdown format, and downloading the converted content as text files. Then, I needed to place it all into the correct locations in the new site structure, so that my posts would be built with the Hugo Academic template. Because I chose new URLs at easy-to-redirect locations, I could minimize any "file not found" errors for potential visitors. I had an excellent guide to follow to get the [WordPress to Hugo migration](https://wowchemy.com/docs/import/migrate-from-wordpress/) completed fairly quickly.
 
 ### Installing WordPress to Jekyll Exporter Plugin
-https://wordpress.org/plugins/jekyll-exporter/
+
+The main ingredient for the migration is the Jekyll Exporter. Jekyll is a popular static site generator, that, like Hugo, expects MarkDown formatted content. I decided to [install this WordPress to Jekyll Exporter plugin](https://wordpress.org/plugins/jekyll-exporter/) on a development version of my website, with a fresh copy of the production site's database, since it's unnecessary, and arguably dangerous, to install or run any migration from the prod instance. I ended up with a ZIP file of all the site's content in my Downloads folder. It's also possible to run a migration through the commandline using `wp-cli`, and this methodology will be particularly useful if you have a lot of content to export, and don't want to risk a timeout or incomplete dump. Further instructions on how to accomplish this, as well as documentation for more advanced features of the exporter, are located on the WordPress to Jekyll Exporter plugin download page.
 
 ### Importing Site Content Into Hugo
-https://sourcethemes.com/academic/docs/migrate-from-jekyll/
 
+Luckily for me, I had found a [very helpful guide](https://wowchemy.com/docs/import/migrate-from-jekyll/) to get me started on the content import portion of my big project. Once all the Markdown files were downloaded, I needed to massage them into place. My posts were inside a `_posts` folder in the ZIP, and each was named with its publish date. I created a new batch of folders under Hugo's `content/post` area, one for each of my blog posts. I named each folder with the post title slug, and each content file was renamed to `index.md`, then placed into its respective folder. For example, `/jekyll-export/_posts/1997-05-27-the-status-of-women-in-computer-science.md` became `/content/post/the-status-of-women-in-computer-science/index.md` and any  associated image content for that post was stored in the same folder as the Markdown file.
+
+I also went to the trouble of editing the front matter of each post to conform to Hugo's standards, while removing any WordPress-specific items. The front matter for the Jekyll Export of one of my articles originally looked like this:
+
+```
+---
+id: 97
+title: How an Equation Changed Warfare
+date: 1995-05-01T12:00:36-07:00
+author: suzanne
+layout: post
+guid: https://dev-suzanne.pantheonsite.io/?p=97
+permalink: /1995/05/01/how-an-equation-changed-warfare/
+layers:
+  - 'a:1:{s:9:"video-url";s:0:"";}'
+categories:
+  - Essays
+---
+```
+
+You can see in the Hugo header for this migrated article that I've added some additional fields, removed other irrelevant bits, and altered the format of fields like categories in my article's front matter:
+
+```
+---
+title: 'How an Equation Changed Warfare'
+subtitle: ''
+summary: ''
+authors:
+- suzanne
+tags:
+- technology
+categories: [Essays]
+date: "1995-05-01T00:00:00Z"
+lastmod: "1995-05-01T00:00:00Z"
+featured: false
+draft: false
+---
+```
+
+The only modification to my migration process that I would recommend for someone trying to accomplish this for a ton of content would be to alter the Jekyll Exporter code, and ensure that the front data transformations and file naming conventions are tailored for your purposes.
 
 ## Writing with Hugo Academic
 
-https://sourcethemes.com/academic/docs/writing-markdown-latex/
+And that's it! Once your fresh spanking new Hugo site is building without errors, you can go ahead and add new content easily enough. I like using the command line to create posts, so I can just use the following command to add a new post to my blog in my desired organizational structure:
+
+```
+hugo new  --kind post post/my-article-name/index.md
+```
+
+In order to provide more rich content, it can be useful to study writing with Markdown, including embedding widgets. I found that the Academic theme has a really nice documentation page to help with exactly that:
+
+[Page Elements: Writing content with Markdown, LaTeX, and Shortcodes](https://wowchemy.com/docs/content/writing-markdown-latex/)
+
+## Migration: Conclusion
+
+I hope you've enjoyed taking this WordPress to Hugo journey with me. Since I moved my blog from a hosted application to a static implementation, I've not wasted any more time updating a CMS or plugins, wrestled with tech debt and all its overhead, or worried about getting hacked. All my content and configuration is in code, and backing up my database is just not a thing anymore. I couldn't be any more pleased with the results, and I'll keep you updated on any future migration journeys I might embark upon with this site. Until then, happy migrating!
+
