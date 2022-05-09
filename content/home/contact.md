@@ -8,13 +8,23 @@ weight = 100  # Order that this section will appear.
 title = "Contact"
 subtitle = ""
 
-# Automatically link email and phone?
+[content]
 autolink = true
+email = ""
+phone = ""
+directions = ""
+office_hours = []
+appointment_url = ""
 
-# Email form provider
-#   0: Disable email form
-#   1: Netlify (requires that the site is hosted by Netlify)
-#   2: formspree.io
-email_form = 0
+  [content.form]
+  provider = "formspree"
+
+    [content.form.formspree]
+    id = "xlezaeay"
+    [content.form.netlify]
+    captcha = false
+
+[design]
+columns = "2"
 +++
 

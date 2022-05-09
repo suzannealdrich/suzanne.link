@@ -17,52 +17,60 @@ date_format = "Jan 2006"
 #   Required fields are `title`, `company`, and `date_start`.
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
+
+
 [[experience]]
-  title = "Solutions Engineer Manager"
-  company = "Cloudflare"
-  company_url = "https://www.cloudflare.com/"
-  location = "San Francisco, California"
-  date_start = "2018-09-15"
+  title = "Director, Sales Engineering"
+  company = "Vercel"
+  company_url = "https://www.vercel.com/"
+  location = "Remote"
+  date_start = "2021-06-13"
   date_end = ""
   description = """
-  Leading the West and Central North America Field Solutions teams.
 
-  * Coaching individual contributors & providing guidance and support for their career goals.
-  * Balancing team work load and delegating responsibility to team leads.
-  * Enabling team with the skills and knowledge they need to be successful Solutions Engineers.
-  * Working with cross functional leads across the organization to coordinate the design of scalable, secure, and performant solutions that enable the success of our most strategic enterprise customers.
+  * Recruited, hired, onboarded, and trained Sales Engineering team from the ground up.
+  * Established feature requirement flywheel between Sales, Customer Success, GTM, Product, and Engineering teams.
+  * Routinely exceeded 100% of revenue objectives through cross-team collaboration.
+  * Developed Proof of Concept approach focused on winning confidence of technical customers.
+  * Defined company's technical vision and strategy to customers and prospects.
   """
 
 [[experience]]
-  title = "Solutions Engineer Team Lead"
+  title = "Field Solutions Engineer Manager"
   company = "Cloudflare"
   company_url = "https://www.cloudflare.com/"
   location = "San Francisco, California"
-  date_start = "2016-07-15"
-  date_end = "2018-09-15"
+  date_start = "2015-07-14"
+  date_end = "2021-06-01"
   description = """
-  Leading a team of solutions engineers.
 
-  * Recruiting, interviewing, and hiring new members to grow the team.
-  * Supporting all team members with regular 1-on-1 meetings, coaching, and facilitating bi-directional feedback.
-  * Escalation point for all team issues.
-  * Developing a modular enterprise customer onboarding program.
+  * Led the growth of Cloudflare's Solutions Engineering organization from one of the first 10 Solutions Engineers to managing a team of 8 covering the US West and Central Field regions.
+  * Responsible for multi-million dollar book of business of strategic customers and partners of varying size.
+  * Collaborated with cross-functional leads in Product and Engineering to innovate scalable cloud solutions.
+  * Delivered security and performance strategies that optimized web applications by recommending best practices in edge technologies & content delivery.
+  * Educated, empowered, and ensured the long-term success of Enterprises as technical customer advocate.
+  * Recruited, interviewed, and hired dozens of new members to grow the team.
+  * Balanced team workload against capabilities, and delegated responsibility to team leads.
+  * Supported all team members with mentorship and guidance for career goals.
+  * Defined team processes and best practices, and shared the team's solutions across the organization.
+  * Wrote and delivered presentations on behalf of the team at customer and partner events.
   """
 
 [[experience]]
-  title = "Solutions Engineer"
-  company = "Cloudflare"
-  company_url = "https://www.cloudflare.com/"
+  title = "Senior Customer Success Engineer"
+  company = "Pantheon"
+  company_url = "https://www.pantheon.io/"
   location = "San Francisco, California"
-  date_start = "2016-07-15"
-  date_end = "2015-07-31"
+  date_start = "2013-07-01"
+  date_end = "2015-07-01"
   description = """
-  Educating, empowering, and ensuring the long-term success of the Enterprise customer.
-
-  * Finding scalable, best-fit solutions for prospects.
-  * Delivering security and performance strategies.
-  * Creating internal analytics dashboards and scripts.
-  * Training and onboarding new customers and partners via video-conference, onsite visits, and documentation.
+  
+  * Senior-level support technician at a quickly growing startup providing an auto scaling website hosting and DevOps platform.
+  * Delivered clear, accurate, well-executed, and empathetic solutions to highly complex, technical problems.
+  * Triaged customer issues, communicating platform incidents, and administering tickets.
+  * Provided expertise on continuous integration and code deployment workflow.
+  * Audited web application architecture and conducted performance load testing.
+  * Achieved customer satisfaction ratings of 95% or greater.
   """
 
 [[experience]]
@@ -73,12 +81,12 @@ date_format = "Jan 2006"
   date_start = "1997-06-01"
   date_end = ""
   description = """
-  SJA Consulting provides small organizations with comprehensive services from website development to IT consulting. Designing a usable web requires a commitment to high standards of form and function. Specializing in developing aesthetic solutions utilizing open-source technologies, we’ve succeeded in delivering cost-effective systems that are easy to use.
 
-  * Expert Drupal, WordPress, and Hugo implementations, upgrades, maintenance, and support.
-  * Custom theme and module development.
-  * Usable and secure sites that stand the test of time.
-  * Genuine interest in client requirements and user needs.
+  * Provided website development and IT consulting to small businesses.
+  * Developed performant and secure solutions utilizing open-source technologies in a cost-effective manner.
+  * Implemented Drupal & WordPress CMS, along with upgrades, maintenance, and support.
+  * Developed custom theme and module code.
+  * Provided training and support to clients on how to use and update their website.
   """
 
 +++

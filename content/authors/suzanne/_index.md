@@ -1,6 +1,6 @@
 ---
 # Display name
-name: Suzanne Aldrich
+title: Suzanne Aldrich
 
 # Username (this should match the folder name)
 authors:
@@ -27,12 +27,12 @@ interests:
 
 education:
   courses:
-  - course: Science, Technology, & Society
+  - course: Major, Science, Technology, & Society
     institution: Stanford University
     year: 2011
-  - course: Computer Science
+  - course: Minor, Computer Science
     institution: Stanford University
-    year: 2001
+    year: 2011
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
@@ -67,4 +67,4 @@ email: "mail@suzanne.link"
 # - Visitors
 ---
 
-Suzanne grew up in northern California amid a triumvirate of forests, wine country, and rugged coastline. Her youth consisted of summers spent reading voraciously, visiting museums in Chicago with her family, and lots of time amongst redwood trees appreciating nature and honing her budding engineering skills on miniature dams in forest streams. Suzanne’s curiosity and talent eventually landed her at Stanford University where she studied Computer Science and how people and technology interact. While at Stanford, Suzanne designed the Wearable Computing Lab’s website which was hosted on a matchbox-sized Linux server. At the time, it was the smallest webserver in the world. Lately, she’s been focusing on how global movements function without a figurehead and has even launched a few campaigns herself aimed at health care and banking reform. If Suzanne learned anything from a youth spent in nature, it’s that everything has a cycle. She’s keeping the wheel turning by taking her own family on long hikes and by helping her oldest daughter draw abstract diagrams of how the Internet works. After having spent time with Acquia and Pantheon Platform, Suzanne is currently leading a team of Solution Engineers at Cloudflare to help solve complex Internet security and performance problems for enterprise customers.
+Suzanne grew up in northern California amid a triumvirate of forests, wine country, and rugged coastline. Her youth consisted of summers spent reading voraciously, visiting museums in Chicago with her family, and lots of time amongst redwood trees appreciating nature and honing her budding engineering skills on miniature dams in forest streams. Suzanne’s curiosity and talent eventually landed her at Stanford University where she studied Computer Science and how people and technology interact. While at Stanford, Suzanne designed the Wearable Computing Lab’s website which was hosted on a matchbox-sized Linux server. At the time, it was the smallest webserver in the world. Lately, she’s been focusing on how global movements function without a figurehead and has even launched a few campaigns herself. If Suzanne learned anything from a youth spent in nature, it’s that everything has a cycle. She’s keeping the wheel turning by taking her own family on long hikes and by helping her oldest daughter learn how to program. After having spent time with Pantheon Platform and Cloudflare, Suzanne is currently Director of Sales Engineering at Vercel, helping make the web faster.

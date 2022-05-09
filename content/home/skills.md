@@ -15,22 +15,64 @@ subtitle = ""
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
 
 [[feature]]
-  icon = "drupal"
-  icon_pack = "fab"
-  name = "Drupal"
+  icon = "file-code"
+  icon_pack = "fas"
+  name = "HTTP"
   description = "70%"
 
 [[feature]]
-  icon = "wordpress"
-  icon_pack = "fab"
-  name = "WordPress"
-  description = "50%"
+  icon = "diagram-project"
+  icon_pack = "fas"
+  name = "DNS"
+  description = "75%"
   
+[[feature]]
+  icon = "key"
+  icon_pack = "fas"
+  name = "TLS"
+  description = "60%"
+
+[[feature]]
+  icon = "network-wired"
+  icon_pack = "fas"
+  name = "TCP/IP"
+  description = "50%"
+
+[[feature]]
+  icon = "globe"
+  icon_pack = "fas"
+  name = "Edge Compute"
+  description = "70%"
+
+[[feature]]
+  icon = "shield"
+  icon_pack = "fas"
+  name = "Web Security"
+  description = "70%"
+
+[[feature]]
+  icon = "cloud"
+  icon_pack = "fas"
+  name = "Cloud Platforms"
+  description = "60%"
+
+[[feature]]
+  icon = "database"
+  icon_pack = "fas"
+  name = "Databases"
+  description = "50%"
+
+[[feature]]
+  icon = "server"
+  icon_pack = "fas"
+  name = "Web Servers"
+  description = "60%"  
+
 [[feature]]
   icon = "linux"
   icon_pack = "fab"
   name = "Linux"
-  description = "50%"
+  description = "50%" 
 
 [[feature]]
   icon = "docker"
@@ -45,28 +87,40 @@ subtitle = ""
   description = "75%"
 
 [[feature]]
-  icon = "php"
+  icon = "react"
   icon_pack = "fab"
-  name = "PHP"
+  name = "React"
   description = "25%"
 
 [[feature]]
   icon = "js"
   icon_pack = "fab"
   name = "JavaScript"
-  description = "25%"  
+  description = "40%"  
 
 [[feature]]
   icon = "git"
   icon_pack = "fab"
   name = "Git"
-  description = "50%"  
+  description = "60%"  
+
+[[feature]]
+  icon = "drupal"
+  icon_pack = "fab"
+  name = "Drupal"
+  description = "70%"
+
+[[feature]]
+  icon = "wordpress"
+  icon_pack = "fab"
+  name = "WordPress"
+  description = "50%"   
   
 [[feature]]
   icon = "camera-retro"
   icon_pack = "fas"
   name = "Photography"
-  description = "50%"
+  description = "70%"
 
 # Uncomment to use emoji icons.
 # [[feature]]

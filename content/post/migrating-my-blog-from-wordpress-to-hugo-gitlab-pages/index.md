@@ -84,9 +84,9 @@ First thing's first: getting Hugo installed. Assuming you're using Homebrew (you
 brew install git golang hugo
 ```
 
-{{% alert note %}}
+{{% callout note %}}
 Dependencies: go, git
-{{% /alert %}}
+{{% /callout %}}
 
 You'll want to make sure to follow any specific instructions provided by Homebrew about completing the installation & configuration of `go`, including appending the binary location to the `PATH` in your shell configuration.
 
@@ -94,9 +94,9 @@ You'll want to make sure to follow any specific instructions provided by Homebre
 
 To make life a lot easier, I used the [Academic Kickstart](https://wowchemy.com/docs/getting-started/), which provided a script that gets you up and running with a very nice looking academic portfolio, and supported all the features I needed out of the box.
 
-{{% alert note %}}
+{{% callout note %}}
 Hugo Extended is required for building your site with Academic Kickstart.
-{{% /alert %}}
+{{% /callout %}}
 
 First I cloned the repository to my local dev system:
 
