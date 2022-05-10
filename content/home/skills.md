@@ -18,73 +18,73 @@ subtitle = ""
   icon = "file-code"
   icon_pack = "fas"
   name = "HTTP"
-  description = "70%"
+  description = ""
 
 [[feature]]
   icon = "diagram-project"
   icon_pack = "fas"
   name = "DNS"
-  description = "75%"
+  description = ""
   
 [[feature]]
   icon = "key"
   icon_pack = "fas"
   name = "TLS"
-  description = "60%"
+  description = ""
 
 [[feature]]
   icon = "network-wired"
   icon_pack = "fas"
   name = "TCP/IP"
-  description = "50%"
+  description = ""
 
 [[feature]]
   icon = "globe"
   icon_pack = "fas"
   name = "Edge Compute"
-  description = "70%"
+  description = ""
 
 [[feature]]
   icon = "shield"
   icon_pack = "fas"
   name = "Web Security"
-  description = "70%"
+  description = ""
 
 [[feature]]
   icon = "cloud"
   icon_pack = "fas"
   name = "Cloud Platforms"
-  description = "60%"
+  description = ""
 
 [[feature]]
   icon = "database"
   icon_pack = "fas"
   name = "Databases"
-  description = "50%"
+  description = ""
 
 [[feature]]
   icon = "server"
   icon_pack = "fas"
   name = "Web Servers"
-  description = "60%"  
+  description = ""  
 
 [[feature]]
   icon = "linux"
   icon_pack = "fab"
   name = "Linux"
-  description = "50%" 
+  description = "" 
 
 [[feature]]
   icon = "docker"
   icon_pack = "fab"
   name = "Docker"
-  description = "15%"
+  description = ""
 
 [[feature]]
   icon = "code"
   icon_pack = "fas"
   name = "Web Development"
-  description = "75%"
+  description = ""
 
 [[feature]]
   icon = "react"
@@ -96,31 +96,31 @@ subtitle = ""
   icon = "js"
   icon_pack = "fab"
   name = "JavaScript"
-  description = "40%"  
+  description = ""  
 
 [[feature]]
   icon = "git"
   icon_pack = "fab"
   name = "Git"
-  description = "60%"  
+  description = ""  
 
 [[feature]]
   icon = "drupal"
   icon_pack = "fab"
   name = "Drupal"
-  description = "70%"
+  description = ""
 
 [[feature]]
   icon = "wordpress"
   icon_pack = "fab"
   name = "WordPress"
-  description = "50%"   
+  description = ""   
   
 [[feature]]
   icon = "camera-retro"
   icon_pack = "fas"
   name = "Photography"
-  description = "70%"
+  description = ""
 
 # Uncomment to use emoji icons.
 # [[feature]]
