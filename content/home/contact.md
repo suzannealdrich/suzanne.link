@@ -10,14 +10,14 @@ subtitle = ""
 
 [content]
 autolink = true
-email = ""
+email = "mail@suzanne.link"
 phone = ""
 directions = ""
 office_hours = []
 appointment_url = ""
 
   [content.form]
-  provider = "formspree"
+  provider = ""
 
     [content.form.formspree]
     id = "xlezaeay"
