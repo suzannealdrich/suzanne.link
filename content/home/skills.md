@@ -90,7 +90,7 @@ subtitle = ""
   icon = "react"
   icon_pack = "fab"
   name = "React"
-  description = "25%"
+  description = ""
 
 [[feature]]
   icon = "js"

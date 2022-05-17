@@ -28,7 +28,7 @@ featured: false
 links: []
 url_code: ""
 url_pdf: ""
-url_slides: "https://www.slideshare.net/suzannealdrich/drupalcon-vienna-2017-anatomy-of-ddos"
+url_slides: ""
 url_video: "https://www.youtube.com/watch?v=2TCnWSmBKC8"
 
 # Markdown Slides (optional).

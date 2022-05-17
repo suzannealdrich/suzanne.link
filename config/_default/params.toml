@@ -8,25 +8,28 @@
 ############################
 ## Theme
 ############################
+[appearance]
+  # Choose a theme.
+  #   Latest themes (may require updating): https://sourcethemes.com/academic/themes/
+  #   Browse built-in themes in `themes/academic/data/themes/`
+  #   Browse user installed themes in `data/themes/`
+  # theme = "dark"
 
-# Choose a theme.
-#   Latest themes (may require updating): https://sourcethemes.com/academic/themes/
-#   Browse built-in themes in `themes/academic/data/themes/`
-#   Browse user installed themes in `data/themes/`
-theme = "dark"
+  theme_day = "suzanne_link"
+  theme_night = "suzanne_link"
 
-# Enable users to switch between day and night mode?
-day_night = true
+  # Enable users to switch between day and night mode?
+  day_night = true
 
-# Override the theme's font set (optional).
-#   Latest font sets (may require updating): https://sourcethemes.com/academic/themes/
-#   Browse built-in font sets in `themes/academic/data/fonts/`
-#   Browse user installed font sets in `data/fonts/`
-font = "minimal"
+  # Override the theme's font set (optional).
+  #   Latest font sets (may require updating): https://sourcethemes.com/academic/themes/
+  #   Browse built-in font sets in `themes/academic/data/fonts/`
+  #   Browse user installed font sets in `data/fonts/`
+  font = "minimal"
 
-# Choose a font size.
-# Sizes: XS (extra small), S (small), M (medium), L (large - DEFAULT), XL (extra large)
-font_size = "L"
+  # Choose a font size.
+  # Sizes: XS (extra small), S (small), M (medium), L (large - DEFAULT), XL (extra large)
+  font_size = "L"
 
 ############################
 ## Basic Info
@@ -75,7 +78,7 @@ privacy_pack = true
 
 # Enable visitors to edit pages?
 #   `repo` defines the repository URL. `editable` defines which page types can be edited.
-edit_page = {repo_url = "https://github.com/gcushen/hugo-academic", content_dir = "", repo_branch = "master", editable = {docs = true, page = false, post = false}}
+edit_page = {repo_url = "https://github.com/gcushen/hugo-academic", content_dir = "", repo_branch = "main", editable = {docs = true, page = false, post = false}}
 
 # Show related content at the bottom of pages?
 show_related = {docs = true, page = false, post = true, project = true, publication = true, talk = true}
@@ -145,6 +148,16 @@ address_format = "en-us"
 ############################
 ## Advanced
 ############################
+
+[header.navbar]
+  enable = true
+  align = "l"
+  show_logo = true
+  show_translations = true
+  show_language = false
+  show_day_night = true
+  show_search = true
+  highlight_active_link = true
 
 # Main menu alignment (l = left, c = center, r = right) and logo options.
 main_menu = {align = "l", show_logo = true}
