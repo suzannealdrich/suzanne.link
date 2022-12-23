@@ -20,12 +20,22 @@ date_format = "Jan 2006"
 
 
 [[experience]]
+  title = "Sales Engineering Manager, West"
+  company = "Chronosphere"
+  company_url = "https://www.chronosphere.io/"
+  location = "Remote"
+  date_start = "2022-09-12"
+  date_end = ""
+  description = """
+  """
+
+[[experience]]
   title = "Director, Sales Engineering"
   company = "Vercel"
   company_url = "https://www.vercel.com/"
   location = "Remote"
   date_start = "2021-06-13"
-  date_end = ""
+  date_end = "2022-08-26"
   description = """
   """
 
