@@ -21,7 +21,6 @@ default:
   before_script:
     - apk add --update --no-cache git go
     - git submodule update --init --recursive
-    - hugo mod init gitlab.com/pages/hugo
 
 stages:
   - test
