@@ -57,4 +57,20 @@ align = "right"
   icon_pack = "fas"
   text = "Read More"
   url = "post/the-status-of-women-in-computer-science/"
+
+[[content.slides]]
+title = "Ethereal Expression - The History and Significance of the Theremin"
+content = "&#8220;At the dawn of the age of electricity, a Russian physicist named Lev Terman developed a new instrument that would allow composers and performers to transcend musical limits.&#8221;"
+align = "center"
+
+  [content.slides.background]
+  position = "center"
+  color = "#333"
+  brightness = 0.5
+
+  [content.slides.link]
+  icon = "book-open"
+  icon_pack = "fas"
+  text = "Read More"
+  url = "post/ethereal-expression/"
 +++
