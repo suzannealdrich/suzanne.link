@@ -54,12 +54,8 @@ As we suspected, the presence of delay in auditory feedback causes a significant
 
 A lot more could be done with this experiment to yield greater results.  Right now, the only haptic feedback involved is based on body position and motion (kinesthesia).  Letting some subjects use a rubber band wrapped around their hand and the theremin would introduce an element of touch as well.  Any difference in performance between subjects using the rubber band and those who do not would shed light on the role of taction vs. kinesthia in this type of situation.  Another extension would be to examine the actual trials of our subjects, as opposed to the results; one could look for patterns in how subjects attempted to find the right note.  They might use a series of smaller and smaller motions alternating around the right pitch, or they may gradually approach it from one side, or perhaps become erratic when experiencing delay.  An analysis of this type of data may give insight as to how people learn unfamiliar interfaces, as well as how they try to reproduce a pitch in the real world they they only "hear" in their head.  A third extension might be to use different amounts of delay and see how the performance and adaptive measures of our subjects differ.  At 0.1 seconds of delay, they may still be able to use auditory feedback control, while at a full second of delay, they might choose to use only haptic feedback, the visual position of their hand, or some other, unexpected method of compensation.  Finally, the experiment could be conducted with different instruments in order to determine the redundancy of various musical interfaces.  A graph of their relative dependence on aural feedback would probably place the theremin at the top.
 
-Suzanne Aldrich and David Chisholm
-
-Prof. Jonathan Berger
-
-Music 151
-
-Stanford University
-
+Suzanne Aldrich and David Chisholm \
+Prof. Jonathan Berger \
+Music 151 \
+Stanford University \
 March 15, 2000
