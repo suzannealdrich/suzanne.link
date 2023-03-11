@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Suzanne Aldrich - Total Badass
+title: Suzanne Aldrich
 
 # Username (this should match the folder name)
 authors:
