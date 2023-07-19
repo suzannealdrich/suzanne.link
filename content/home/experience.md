@@ -25,7 +25,7 @@ date_format = "Jan 2006"
   company_url = "https://www.chronosphere.io/"
   location = "Remote"
   date_start = "2022-09-12"
-  date_end = ""
+  date_end = "2023-07-17"
   description = """
   """
 
