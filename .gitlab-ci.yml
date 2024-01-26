@@ -19,7 +19,6 @@ variables:
 
 default:
   before_script:
-    - apk add --update --no-cache git go
     - git submodule update --init --recursive
 
 stages:
