@@ -60,9 +60,8 @@ pages:
 s3:
   image: "${CI_TEMPLATE_REGISTRY_HOST}/gitlab-org/cloud-deploy/aws-base:latest"
   stage: deploy
-  needs:
-    - build
   rules:
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  before_script: []
   script:
     - aws s3 sync public s3://$S3_BUCKET_NAME
