@@ -6,51 +6,63 @@
 #   All available Hugo versions are listed under https://gitlab.com/pages/hugo/container_registry.
 # - Read about the difference between hugo and hugo_extended
 #   https://gitlab.com/pages/hugo/-/blob/main/README.md#hugo-vs-hugo_extended.
+#   If you don't know what to use, better use the extended version.
 # - To change the theme, see
 #   https://gitlab.com/pages/hugo/-/blob/main/README.md#use-a-custom-theme.
 #
-image: registry.gitlab.com/pages/hugo/hugo_extended:latest
-
-# Set this if you intend to use Git submodules
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive
-  HUGO_ENV: production
-  S3_BUCKET_NAME: "suzanne.link"
-
-default:
-  before_script:
-    - git submodule update --init --recursive
-
 stages:
   - test
   - build
   - deploy
 
-cache:
-  paths:
-    - public
+variables:
+  HUGO_ENV: production
+  TZ: America/Los_Angeles
+  S3_BUCKET_NAME: "suzanne.link"
+  THEME_URL: "github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy/v5"
+  PLUGIN_URL_1: "github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-reveal"
+  PLUGIN_URL_2: "github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-netlify"
+  PLUGIN_URL_3: "github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-netlify-cms"
 
+default:
+  image: registry.gitlab.com/pages/hugo/hugo_extended:latest
+  before_script:
+    - apk add --no-cache go curl bash npm
+    - hugo mod get -u $THEME_URL
+    - hugo mod get -u $PLUGIN_URL_1
+    - hugo mod get -u $PLUGIN_URL_2
+    - hugo mod get -u $PLUGIN_URL_3
+    # To use PostCSS, we must install the following modules. See:
+    # - https://gohugo.io/hugo-pipes/postcss/
+    # - https://github.com/google/docsy/tree/main#prerequisites
+    - npm install postcss postcss-cli autoprefixer
+
+# Use everywhere except on the default branch
 test:
   stage: test
-  except:
-    - main
   script:
-    - hugo
+    - hugo --minify
+  rules:
+    - if: $CI_COMMIT_REF_NAME != $CI_DEFAULT_BRANCH
 
+# Run only on the default branch
 pages:
   stage: build
-  only:
-    - main
   script:
-    - hugo
+    - hugo --minify
   artifacts:
     paths:
       - public
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  environment: production
 
 s3:
-  image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
+  image: "${CI_TEMPLATE_REGISTRY_HOST}/gitlab-org/cloud-deploy/aws-base:latest"
   stage: deploy
-  only:
-    - main
+  needs:
+    - build
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
   script:
     - aws s3 sync public s3://$S3_BUCKET_NAME
