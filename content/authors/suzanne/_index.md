@@ -54,6 +54,8 @@ email: "mail@suzanne.link"
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
 skills:
   - name: Technical
+    color: '#ed4a72'
+    color_border: '#fff'
     items:
       - name: Cloud Platforms
         description: ''
@@ -141,8 +143,8 @@ skills:
         icon: wordpress
         icon_pack: fab
   - name: Hobbies
-    color: '#eeac02'
-    color_border: '#f0bf23'
+    color: '#ed4a72'
+    color_border: '#fff'
     items:
       - name: Camping
         description: ''
