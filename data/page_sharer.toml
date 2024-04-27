@@ -1,5 +1,5 @@
 # Page Sharer
-# Documentation: https://sourcethemes.com/academic/docs/customization/#page-sharer
+# Documentation: https://docs.hugoblox.com/hugo-tutorials/page-sharer/
 
 [[buttons]]
   id = "twitter"
@@ -39,7 +39,7 @@
   title = "WhatsApp"
   icon_pack = "fab"
   icon = "whatsapp"
-  enable = false
+  enable = true
 
 [[buttons]]
   id = "weibo"
@@ -47,7 +47,7 @@
   title = "Weibo"
   icon_pack = "fab"
   icon = "weibo"
-  enable = false
+  enable = true
 
 [[buttons]]
   id = "reddit"

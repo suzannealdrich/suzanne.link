@@ -19,17 +19,17 @@ authors: [suzanne]
 tags: [technology]
 
 # Is this a featured talk? (true/false)
-featured: false
+featured: true
 
 # image:
-#  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
-#  focal_point: Right
+#   caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
+#   focal_point: Right
 
-links: []
-url_code: ""
-url_pdf: ""
-url_slides: ""
-url_video: "https://www.youtube.com/watch?v=2TCnWSmBKC8"
+links:
+url_code: ''
+url_pdf: ''
+url_slides: ''
+url_video: 'https://www.youtube.com/watch?v=2TCnWSmBKC8'
 
 # Markdown Slides (optional).
 #   Associate this talk with Markdown slides.
@@ -43,9 +43,7 @@ slides: ""
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
-projects: []
-
-# Enable math on this page?
-math: false
+projects: ""
 ---
 
+{{< youtube 2TCnWSmBKC8 >}}
