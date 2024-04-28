@@ -25,15 +25,6 @@ sections:
         passion for learning and an interest in shaping technology's impact on society. I love bringing an innovative perspective to technical problems
         and helping customers realize the full value of technology.
 
-        * I am known for a customer-obsessed approach with emphasis on human-centered design and usability for the web.
-        * Design of Enterprise-grade scalable networks and compute systems that are secure, low-latency, reliable, and operate efficiently.
-        * Deep technical experience with core web technologies including HTTP, DNS, TCP/IP, JavaScript, JSON, REST APIs.
-        * Distributed computing including proxies, edge compute, content delivery & optimization, service workers, and other primitives.
-        * Security capabilities including TLS & PKI with an emphasis on web security, including OWASP Top 10 and DDoS mitigation.
-        * Modern web patterns including web server deployment with Nginx & Apache, CMS, JAMStack, PWA, React, and Next.JS.
-        * Core systems design and engineering including operating systems, virtualization, containerization, database design, GitOps, cloud
-        platforms, networking, and observability.
-
         <!--Custom spacing-->
         <div class="mb-3"></div>
         <!--GitHub Button JS-->
