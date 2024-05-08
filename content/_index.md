@@ -29,6 +29,7 @@ sections:
         <div class="mb-3"></div>
         <!--GitHub Button JS-->
         <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="34e34708-9c82-46ac-b1b4-562c4a4cb201" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
     design:
       background:
         gradient_end: '#ed4a72'
