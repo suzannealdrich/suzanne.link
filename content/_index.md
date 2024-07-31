@@ -12,7 +12,7 @@ sections:
       image:
         filename: avatar-hero.png
       cta:
-        label: '**Hire Suzanne**'
+        label: '**Connect with Suzanne**'
         url: 'https://www.linkedin.com/in/suzannealdrich/'
       cta_alt:
         label: Ask her a question
@@ -61,6 +61,14 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
+        - title: Senior Solutions Engineer
+          company: Cloudflare
+          company_url: 'https://www.cloudflare.com/'
+          company_logo: org-cloudflare
+          location: San Francisco, California
+          date_start: '2024-07-29'
+          date_end: ''
+          description: To help build a better Internet.
         - title: Sales Engineering Manager, West
           company: Chronosphere
           company_url: 'https://www.chronosphere.io/'
