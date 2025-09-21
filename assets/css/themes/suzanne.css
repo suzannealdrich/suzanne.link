@@ -1,0 +1,16 @@
+/* Hugo Blox color theme: ROSE (#ed4a72) */
+:root {
+  --color-primary-50:  251 248 249;
+  --color-primary-100: 248 237 239;
+  --color-primary-200: 245 214 222;
+  --color-primary-300: 241 167 185;
+  --color-primary-400: 240 117 147;
+  --color-primary-500: 237 74 114;   /* #ed4a72 */
+  --color-primary-600: 233 32 81;
+  --color-primary-700: 200 25 68;
+  --color-primary-800: 160 24 57;
+  --color-primary-900: 121 21 46;
+  --color-primary-950: 84 18 34;
+}
+
+\

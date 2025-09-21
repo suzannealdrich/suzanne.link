@@ -1,0 +1,5 @@
+/* Tailwind CSS v4 Configuration */
+/* Content detection and plugin configuration */
+
+/* Form plugin for form styles */
+@plugin "@tailwindcss/forms";
