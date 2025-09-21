@@ -19,10 +19,9 @@ variables:
   HUGO_ENV: production
   TZ: America/Los_Angeles
   S3_BUCKET_NAME: "suzanne.link"
-  THEME_URL: "github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy/v5"
-  PLUGIN_URL_1: "github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-reveal"
-  PLUGIN_URL_2: "github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-netlify"
-  PLUGIN_URL_3: "github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-netlify-cms"
+  THEME_URL: "github.com/HugoBlox/hugo-blox-builder/starters/academic-cv"
+  PLUGIN_URL_1: "github.com/HugoBlox/hugo-blox-builder/modules/blox-plugin-netlify"
+  PLUGIN_URL_2: "github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind"
 
 default:
   image: registry.gitlab.com/pages/hugo/hugo_extended:latest
@@ -31,7 +30,6 @@ default:
     - hugo mod get -u $THEME_URL
     - hugo mod get -u $PLUGIN_URL_1
     - hugo mod get -u $PLUGIN_URL_2
-    - hugo mod get -u $PLUGIN_URL_3
     # To use PostCSS, we must install the following modules. See:
     # - https://gohugo.io/hugo-pipes/postcss/
     # - https://github.com/google/docsy/tree/main#prerequisites

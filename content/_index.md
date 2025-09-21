@@ -1,253 +1,168 @@
 ---
 # Leave the homepage title empty to use the site title
-title: ''
+title: ""
 date: 2022-10-24
 type: landing
 
+design:
+  # Default section spacing
+  #spacing:
+  #  padding: [6, 6, 6, 6]
+
 sections:
   - block: hero
-    demo: false # Only display this section in the Hugo Blox Builder demo site
     content:
-      title: 'Solutions Engineering Leader'
-      image:
-        filename: avatar-hero.png
-      cta:
-        label: '**Connect with Suzanne**'
-        url: 'https://www.linkedin.com/in/suzannealdrich/'
-      cta_alt:
-        label: Ask her a question
-        url: '/#contact'
-      cta_note:
-        label: >-
-          <div style="text-shadow: none;"><a class="github-button" href="https://github.com/suzannealdrich/suzanne.link" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star">Star suzanne.link</a></div>
+      title: Suzanne Aldrich — Modern Infra Architect
       text: |-
-        Experienced engineering leader with 20+ years of focused expertise in technical product management and solutions engineering. I have a
-        passion for learning and an interest in shaping technology's impact on society. I love bringing an innovative perspective to technical problems
-        and helping customers realize the full value of technology.
-
-        <!--Custom spacing-->
-        <div class="mb-3"></div>
-        <!--GitHub Button JS-->
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
-        <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="34e34708-9c82-46ac-b1b4-562c4a4cb201" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+        Strategic Solutions Engineer at Cloudflare with 20+ years in infrastructure and security. 
+        I help organizations design secure, resilient architectures using Cloudflare’s connectivity cloud, Zero Trust services, and developer platform. 
+        I’ve guided startups and enterprises through high-stakes PoCs, migrations, and transformations across DNS, AppSec, DDoS, and network modernization. 
+        My focus: turning infrastructure fragility into business resilience.
+      primary_action:
+        text: '**Connect**'
+        url: https://www.linkedin.com/in/suzannealdrich/
+        icon: sparkles
+      secondary_action:
+        text: '**Contact**'
+        url: /#contact
+      announcement:
+        text:  '🎤 I’ll be speaking at Cloudflare Connect Las Vegas — *Everything breaks eventually: Designing for resiliency beyond SASE*'
+        link:
+          text: View session details
+          url: https://events.cloudflare.com/connect/2025/sessions/3269488
     design:
       background:
         gradient_end: '#ed4a72'
         gradient_start: '#004ba0'
+        # Text color (true=light, false=dark, or remove for the dynamic theme color).
         text_color_light: true
-  - block: about.biography
+  - block: resume-biography-3
     id: about
     content:
-      title: Biography
-      # Choose a user profile to display (a folder name within `content/authors/`)
+      # The user's folder name in `content/authors/`
       username: suzanne
-  - block: skills
+      # Show a call-to-action button under your biography? (optional)
+      # To link to a file, upload it to your `static/uploads/` folder
+      button:
+        text: Download CV
+        url: files/cv.pdf
+      headings:
+        about: ''
+        education: ''
+        interests: ''
+    # design:
+    #   banner:
+    #     # Upload a cover image to `assets/media/` folder and reference its filename here (optional)
+    #     filename: ''
+    #   biography:
+    #     # Customize the CSS style of your biography text (optional)
+    #     style: ''
+    design:
+      #spacing:
+      #  padding: [6, 6, 6, 6]
+      #biography:
+      #  style: 'text-align: justify; font-size: 0.8em;'
+      # Apply a gradient background
+      # css_class: hbx-bg-gradient
+      # Avatar customization
+      avatar:
+        size: large # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
+        shape: rounded # Options: circle (default), square, rounded
+  - block: markdown
     content:
-      title: Skills
-      text: ''
-      # Choose a user to display skills from (a folder name within `content/authors/`)
-      username: suzanne
+      title: '📚 My Research'
+      subtitle: ''
+      text: |-
+        My work explores how internet infrastructure can be made **secure, performant, and resilient in the face of inevitable failure**. From expired certificates to congested transit providers, no system is perfect — but modern architectures can bend without breaking.
+
+        Recent focus areas:
+        - **Zero Trust adoption** across enterprises and regulated industries.  
+        - **Resiliency patterns** in DNS, DDoS mitigation, and application security.  
+        - **Connectivity cloud strategies** for multi-cloud, SaaS, and edge environments.  
+        - **Human-centered design in technical tooling**, ensuring usability at scale.  
+
+        I share findings through talks and workshops — most recently at **FutureCon Seattle 2025** and soon at **Cloudflare Connect Las Vegas**.  
+        
+        👉 Please reach out if you’d like to collaborate on research, panels, or community events!
     design:
       columns: '1'
-  - block: experience
+
+  - block: cta-card
     content:
-      title: Experience
-      # Date format for experience
-      #   Refer to https://docs.hugoblox.com/customization/#date-format
-      date_format: Jan 2006
-      # Experiences.
-      #   Add/remove as many `experience` items below as you like.
-      #   Required fields are `title`, `company`, and `date_start`.
-      #   Leave `date_end` empty if it's your current employer.
-      #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
-      items:
-        - title: Senior Solutions Engineer
-          company: Cloudflare
-          company_url: 'https://www.cloudflare.com/'
-          company_logo: org-cloudflare
-          location: San Francisco, California
-          date_start: '2024-07-29'
-          date_end: ''
-          description: To help build a better Internet.
-        - title: Sales Engineering Manager, West
-          company: Chronosphere
-          company_url: 'https://www.chronosphere.io/'
-          company_logo: org-chronosphere
-          location: Remote
-          date_start: '2022-09-12'
-          date_end: '2023-07-17'
-          description: Cloud native observability.
-        - title: Director, Sales Engineering
-          company: Vercel
-          company_url: 'https://www.vercel.com/'
-          company_logo: org-vercel
-          location: Remote
-          date_start: '2021-06-13'
-          date_end: '2022-08-26'
-          description: Enabling the world to ship the best products.
-        - title: Field Solutions Engineer Manager
-          company: Cloudflare
-          company_url: 'https://www.cloudflare.com/'
-          company_logo: org-cloudflare
-          location: San Francisco, California
-          date_start: '2015-07-14'
-          date_end: '2021-06-01'
-          description: To help build a better Internet.
-        - title: Senior Customer Success Engineer
-          company: Pantheon
-          company_url: 'https://www.pantheon.io/'
-          company_logo: org-pantheon
-          location: San Francisco, California
-          date_start: '2013-07-01'
-          date_end: '2015-07-01'
-          description: Drupal and WordPress hosting, automated DevOps, and scalable infrastructure serving billions of pageviews a month.
-        - title: Owner
-          company: SJA Consulting
-          company_url: 'https://www.sjaconsulting.com/'
-          company_logo: org-sja
-          location: 
-          date_start: '1997-06-01'
-          date_end: ''
-          description: Tech Wisdom, Mindful Solutions.
+      title: "Debating Executive Control of the Internet"
+      text: |-
+        '&#8220;If government authority weren’t acting in good faith for the public welfare, they might find any legal or technical control over the Internet irresistible to abuse, especially if they weren’t knowledgeable of or concerned with the potential ramifications of exercising such power.&#8221;'
+      button:
+        text: "Read More"
+        url: 'post/debating-executive-control-of-the-internet-a-critical-ethical-analysis-of-the-kill-switch-bill/'
     design:
-      columns: '2'
-  - block: accomplishments
+      background:
+        gradient_end: '#ed4a72'
+        gradient_start: '#004ba0'
+        # Text color (true=light, false=dark, or remove for the dynamic theme color).
+        text_color_light: true
+      spacing:
+        padding: ["6", "6", "6", "6"]
+  - block: cta-card
     content:
-      # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
-      title: 'Accomplish&shy;ments'
-      subtitle:
-      # Date format: https://docs.hugoblox.com/customization/#date-format
-      date_format: Jan 2006
-      # Accomplishments.
-      #   Add/remove as many `item` blocks below as you like.
-      #   `title`, `organization`, and `date_start` are the required parameters.
-      #   Leave other parameters empty if not required.
-      #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
-      items:
-        - certificate_url: 
-          date_end: '2012-05-01'
-          date_start: '2011-05-01'
-          description: 'I volunteered in various capacities for a reading fair started by a fellow Stanford Alumni for youth in disadvantaged areas of the San Francisco Bay Area. I solicited donations for raffle prizes, set up and ran fun reading activities, and coordinated other volunteers at check-in.'
-          icon: 
-          organization: Reading Rainbow in the Park
-          organization_url: http://readinginthepark.org/
-          title: Planning Committee
-          url: ''
-        - certificate_url: 
-          date_end: ''
-          date_start: '2009-08-01'
-          description: 'I developed a civic action mapping web presence and organized national synchronous marches to rally thousands of American people to pressure our government into passing a healthcare reform bill with a strong public option.'
-          icon: 
-          organization: March4Healthcare
-          organization_url: https://www.march4healthcare.com
-          title: Organizing Grassroots Healthcare Activists
-          url: 
+      title: "How an Equation Changed Warfare"
+      text: |-
+        '&#8220;It only takes one irrational leader to start a world war. It only took one equation to change warfare. As Einstein himself put it, &#8220;Politics are for the moment. An equation is for eternity&#8221;&#8221;'
+      button:
+        text: "Read More"
+        url: 'post/how-an-equation-changed-warfare/'
     design:
-      columns: '2'
-  - block: slider
+      background:
+        gradient_end: '#ed4a72'
+        gradient_start: '#004ba0'
+        # Text color (true=light, false=dark, or remove for the dynamic theme color).
+        text_color_light: light
+      spacing:
+        padding: ["6", "6", "6", "6"]
+  - block: cta-card
     content:
-      slides:
-        - title: Debating Executive Control of the Internet
-          content: '&#8220;If government authority weren’t acting in good faith for the public welfare, they might find any legal or technical control over the Internet irresistible to abuse, especially if they weren’t knowledgeable of or concerned with the potential ramifications of exercising such power.&#8221;'
-          align: center
-          background:
-            image:
-              # Specify an image from `assets/media/`
-              # or delete the image section to remove it
-              filename: 
-              filters:
-                brightness: 0.7
-            position: center
-            color: '#666'
-            gradient_end: '#ed4a72'
-            gradient_start: '#004ba0'
-            text_color_light: true
-          link:
-            icon: book-open
-            icon_pack: fas
-            text: Read More
-            url: 'post/debating-executive-control-of-the-internet-a-critical-ethical-analysis-of-the-kill-switch-bill/'
-        - title: How an Equation Changed Warfare
-          content: '&#8220;It only takes one irrational leader to start a world war. It only took one equation to change warfare. As Einstein himself put it, &#8220;Politics are for the moment. An equation is for eternity&#8221;&#8221;'
-          align: center
-          background:
-            image:
-              # Specify an image from `assets/media/`
-              # or delete the image section to remove it
-              filename: 
-              filters:
-                brightness: 0.7
-            position: center
-            color: '#666'
-            gradient_end: '#004ba0'
-            gradient_start: '#ed4a72'
-            text_color_light: true
-          link:
-            icon: book-open
-            icon_pack: fas
-            text: Read More
-            url: 'post/how-an-equation-changed-warfare/'
-        - title: The Status of Women in Computer Science
-          content: '&#8220;The lack of female computer scientists can be attributed to the negative effects of cultural stereotypes, barriers in the educational system, and the small number of female role models for young women; outreach programs, increased awareness of the problem, and a changing economic climate may increase the percentage of women in computer science.&#8221;'
-          align: center
-          background:
-            image:
-              # Specify an image from `assets/media/`
-              # or delete the image section to remove it
-              filename: 
-              filters:
-                brightness: 0.7
-            position: center
-            color: '#666'
-            gradient_end: '#ed4a72'
-            gradient_start: '#004ba0'
-            text_color_light: true
-          link:
-            icon: book-open
-            icon_pack: fas
-            text: Read More
-            url: 'post/the-status-of-women-in-computer-science/'
-        - title: Ethereal Expression - The History and Significance of the Theremin
-          content: '&#8220;At the dawn of the age of electricity, a Russian physicist named Lev Terman developed a new instrument that would allow composers and performers to transcend musical limits.&#8221;'
-          align: center
-          background:
-            image:
-              # Specify an image from `assets/media/`
-              # or delete the image section to remove it
-              filename: 
-              filters:
-                brightness: 0.7
-            position: center
-            color: '#666'
-            gradient_end: '#004ba0'
-            gradient_start: '#ed4a72'
-            text_color_light: true
-          link:
-            icon: book-open
-            icon_pack: fas
-            text: Read More
-            url: 'post/ethereal-expression/'
+      title: "The Status of Women in Computer Science"
+      text: |-
+        '&#8220;The lack of female computer scientists can be attributed to the negative effects of cultural stereotypes, barriers in the educational system, and the small number of female role models for young women; outreach programs, increased awareness of the problem, and a changing economic climate may increase the percentage of women in computer science.&#8221;'
+      button:
+        text: "Read More"
+        url: 'post/the-status-of-women-in-computer-science/'
     design:
-      # Slide height is automatic unless you force a specific height (e.g. '400px')
-      slide_height: ''
-      # Make the slides full screen within the browser window?
-      is_fullscreen: true
-      # Automatically transition through slides?
-      loop: false
-      # Duration of transition between slides (in ms)
-      interval: 2000
+      background:
+        gradient_end: '#ed4a72'
+        gradient_start: '#004ba0'
+        # Text color (true=light, false=dark, or remove for the dynamic theme color).
+        text_color_light: light
+      spacing:
+        padding: ["6", "6", "6", "6"]
+  - block: cta-card
+    content:
+      title: "Ethereal Expression - The History and Significance of the Theremin"
+      text: |-
+        '&#8220;At the dawn of the age of electricity, a Russian physicist named Lev Terman developed a new instrument that would allow composers and performers to transcend musical limits.&#8221;'
+      button:
+        text: "Read More"
+        url: 'post/ethereal-expression/'
+    design:
+      background:
+        gradient_end: '#ed4a72'
+        gradient_start: '#004ba0'
+        # Text color (true=light, false=dark, or remove for the dynamic theme color).
+        text_color_light: light
+      spacing:
+        padding: ["6", "6", "6", "6"]
   - block: collection
     id: posts
     content:
       title: Recent Posts
       subtitle: ''
       text: ''
+      # Page type to display. E.g. post, talk, publication...
+      page_type: post
       # Choose how many pages you would like to display (0 = all pages)
       count: 5
       # Filter on criteria
       filters:
-        folders:
-          - post
         author: ""
         category: ""
         tag: ""
@@ -261,43 +176,10 @@ sections:
       order: desc
     design:
       # Choose a layout view
-      view: compact
-      columns: '2'
-# - block: portfolio
-#   id: projects
-#   content:
-#     title: Projects
-#     filters:
-#       folders:
-#         - project
-#     # Default filter index (e.g. 0 corresponds to the first `filter_button` instance below).
-#     default_button_index: 0
-#     # Filter toolbar (optional).
-#     # Add or remove as many filters (`filter_button` instances) as you like.
-#     # To show all items, set `tag` to "*".
-#     # To filter by a specific tag, set `tag` to an existing tag name.
-#     # To remove the toolbar, delete the entire `filter_button` block.
-#     buttons:
-#       - name: All
-#         tag: '*'
-#       - name: Deep Learning
-#         tag: Deep Learning
-#       - name: Other
-#         tag: Demo
-#   design:
-#     # Choose how many columns the section has. Valid values: '1' or '2'.
-#     columns: '1'
-#     view: showcase
-#     # For Showcase view, flip alternate rows?
-#     flip_alt_rows: false
-# - block: markdown
-#   content:
-#     title: Gallery
-#     subtitle: ''
-#     text: |-
-#       {{< gallery album="demo" >}}
-#   design:
-#     columns: '1'
+      view: date-title-summary
+      # Reduce spacing
+      spacing:
+        padding: [6, 6, 6, 6]
   - block: collection
     id: featured
     content:
@@ -307,22 +189,18 @@ sections:
           - post
         featured_only: true
     design:
-      columns: '2'
-      view: card
-# - block: collection
-#   content:
-#     title: Recent Publications
-#     text: |-
-#       {{% callout note %}}
-#       Quickly discover relevant content by [filtering publications](./publication/).
-#       {{% /callout %}}
-#     filters:
-#       folders:
-#         - publication
-#       exclude_featured: true
-#   design:
-#     columns: '2'
-#     view: citation
+      view: article-grid
+      columns: 4
+  # - block: collection
+  #   content:
+  #     title: Recent Publications
+  #     text: ""
+  #     filters:
+  #       folders:
+  #         - publications
+  #       exclude_featured: false
+  #   design:
+  #     view: citation
   - block: collection
     id: talks
     content:
@@ -331,13 +209,8 @@ sections:
         folders:
           - talk
     design:
-      columns: '2'
-      view: compact
-  - block: tag_cloud
-    content:
-      title: Popular Topics
-    design:
-      columns: '2'
+      view: citation
+      columns: 1
   - block: contact
     id: contact
     content:
@@ -382,5 +255,5 @@ sections:
           # Enable CAPTCHA challenge to reduce spam?
           captcha: false
     design:
-      columns: '2'
+      columns: '2'      
 ---

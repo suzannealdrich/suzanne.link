@@ -1,0 +1,214 @@
+{{/* My Custom Hugo Blox */}}
+{{/* https://hugoblox.com */}}
+
+{{/* Initialise the block */}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $autolink := default true $block.content.autolink }}
+{{ $data := $block.content }}
+
+{{/* Your Hugo variables */}}
+{{ $title := $block.content.title | emojify | $page.RenderString }}
+{{ $text := $block.content.text | emojify | $page.RenderString }}
+{{ $form_provider := lower $block.content.form.provider | default "" }}
+
+{{ $use_netlify_form := eq $form_provider "netlify" }}
+{{ $use_formspree_form := eq $form_provider "formspree" }}
+{{ $use_form := or $use_netlify_form $use_formspree_form }}
+
+{{ $use_netlify_captcha := $block.content.form.netlify.captcha | default true }}
+{{ $use_formspree_captcha := $block.content.form.formspree.captcha | default false }}
+
+{{ $columns := $block.design.columns | default "1" }}
+
+{{/* Add your block layout below */}}
+{{/* Styles can be added to the CSS file */}}
+{{/* Access custom front matter options via $block.content */}}
+{{/* E.g. a field named `text` via $block.content.text */}}
+
+{{ if and $use_formspree_form $use_formspree_captcha }}
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{{ end }}
+<div class="flex flex-col items-center max-w-prose mx-auto gap-3 justify-center">
+    <div class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
+        {{ $title }}
+    </div>
+
+    {{ with $text }}
+      <p class="prose prose-slate lg:prose-xl dark:prose-invert max-w-prose">{{ . }}</p>
+    {{ end }}
+    {{ if $use_form }}
+    {{ $post_action := "" }}
+    {{ if $use_netlify_form }}
+      {{ $post_action = "netlify" }}
+    {{ else if $use_formspree_form }}
+      {{ if not $block.content.form.formspree.id }}
+        {{ errorf "You have chosen to use Formspree as the provider for the contact form. Please set your Formspree Form ID in the Contact widget or disable the form.\nDocumentation: https://docs.hugoblox.com/widget/contact/" }}
+      {{ end }}
+      {{ if and $use_formspree_captcha (not $block.content.form.formspree.captcha_key) }}
+        {{ errorf "You have chosen to use reCAPTCHA for Formspree. Please set your Formspree CAPTCHA KEY in the Contact widget or disable reCAPTCHA.\nDocumentation: https://help.formspree.io/hc/en-us/articles/360022811154" }}
+      {{ end }}
+      {{ $post_action = printf "action=\"https://formspree.io/f/%s\"" $block.content.form.formspree.id }}
+    {{ end }}
+
+    <form class="w-full max-w-sm" name="contact" method="POST" {{ $post_action | safeHTMLAttr }} {{ if $use_netlify_form }}netlify-honeypot="_gotcha"{{ end }} {{ if $use_netlify_captcha }}data-netlify-recaptcha="true"{{ end }} {{ with $block.content.form.netlify.success_url }}action="{{ . | relLangURL }}"{{ end }}>
+      <div class="md:flex md:items-center mb-6">
+        <div class="md:w-1/3">
+          <label class="block prose prose-slate dark:prose-invert font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">
+            {{ i18n "contact_name" }}
+          </label>
+        </div>
+        <div class="md:w-2/3">
+          <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="name" type="text" placeholder="{{ i18n "contact_name" | default "Your Name" }}" required>
+        </div>
+      </div>
+      <div class="md:flex md:items-center mb-6">
+        <div class="md:w-1/3">
+          <label class="block prose prose-slate dark:prose-invert font-bold md:text-right mb-1 md:mb-0 pr-4" for="inputEmail">
+          {{ i18n "contact_email" }}
+          </label>
+        </div>
+        <div class="md:w-2/3">
+          <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inputEmail" type="email" placeholder="{{ i18n "contact_email" | default "Your Email Address" }}" required>
+        </div>
+      </div>
+      <div class="md:flex md:items-center mb-6">
+        <label class="block prose prose-slate dark:prose-invert font-bold md:text-right mb-1 md:mb-0 pr-4" for="inputMessage">{{ i18n "contact_message" }}</label>
+        <textarea name="message" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inputMessage" rows="5" placeholder="{{ i18n "contact_message" | default "Please provide details about your inquiry" }}" required></textarea>
+      </div>
+      {{ if $block.content.form.netlify.attachments }}
+      <div class="mb-6">
+        <label for="fileUpload">{{ i18n "contact_attachment" }}</label>
+        <input type="file" name="file" class="form-control" id="fileUpload" placeholder="{{ i18n "contact_attachment" | default "Attach file" }}">
+      </div>
+      {{ end }}
+      {{/* <div>
+        <label>Do not fill this field unless you are a bot: <input name="_gotcha"></label>
+      </div>  */}}
+      {{ if and $use_netlify_form $use_netlify_captcha }}
+        <div data-netlify-recaptcha="true"></div>
+      {{ else if and $use_formspree_form $use_formspree_captcha }}
+        <div class="g-recaptcha" data-sitekey="{{ $block.content.form.formspree.captcha_key }}"></div>
+      {{ end }}
+      <div class="md:flex md:items-center">
+        <div class="md:w-1/3"></div>
+        <div class="md:w-2/3">
+          <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none prose prose-slate dark:prose-invert font-bold py-2 px-4 rounded" type="submit">
+            {{ i18n "contact_send" | default "Send" }}
+          </button>
+        </div>
+      </div>
+    </form>
+
+  {{ end }}
+
+  <ul class="fa-ul">
+
+    {{ if $data.email }}
+    <li>
+      <i class="fa-li fas fa-envelope fa-2x" aria-hidden="true"></i>
+      <span id="person-email">
+      {{- if $autolink }}<a href="mailto:{{ $data.email }}">{{ $data.email }}</a>{{ else }}{{ $data.email }}{{ end -}}
+      </span>
+    </li>
+    {{ end }}
+
+    {{ with $data.phone }}
+    <li>
+      <i class="fa-li fas fa-phone fa-2x" aria-hidden="true"></i>
+      <span id="person-telephone">
+      {{- if $autolink }}<a href="tel:{{ . }}">{{ . }}</a>{{ else }}{{ . }}{{ end -}}
+      </span>
+    </li>
+    {{ end }}
+
+    {{ $addr_formatted := "" }}{{/* Scoping for maps. */}}
+    {{ if $data.address.street | or $data.address.city | or $data.address.region | or $data.address.postcode | or $data.address.country }}
+      {{ $addr_formatted = partial "functions/get_address" (dict "root" . "address" $data.address) }}
+      <li>
+        <i class="fa-li fas fa-map-marker fa-2x" aria-hidden="true"></i>
+        <span id="person-address">{{$addr_formatted}}</span>
+      </li>
+    {{ end }}
+
+    {{ with $data.directions }}
+    <li>
+      <i class="fa-li fas fa-compass fa-2x" aria-hidden="true"></i>
+      <span>{{ . | markdownify | emojify }}</span>
+    </li>
+    {{ end }}
+
+    {{ with $data.office_hours }}
+    <li>
+      <i class="fa-li fas fa-clock fa-2x" aria-hidden="true"></i>
+      <span>
+        {{- if not (reflect.IsSlice .)}}{{/* Support legacy string format. */}}
+          {{- . | markdownify | emojify -}}
+        {{else}}
+          {{- delimit . "<br>" | markdownify | emojify -}}
+        {{end -}}
+      </span>
+    </li>
+    {{ end }}
+
+    {{ with $data.appointment_url }}
+    <li>
+      <i class="fa-li fas fa-calendar-check fa-2x" aria-hidden="true"></i>
+      <a href="{{ . }}" target="_blank" rel="noopener">{{ i18n "book_appointment" | default "Book an appointment" }}</a>
+    </li>
+    {{ end }}
+
+    {{/* Contact links. */}}
+    {{ range $data.contact_links }}
+    {{ $pack := or .icon_pack "fas" }}
+    {{ $pack_prefix := $pack }}
+    {{ if in (slice "fab" "fas" "far" "fal") $pack }}
+      {{ $pack_prefix = "fa" }}
+    {{ end }}
+    {{ $link := .link }}
+    {{ $scheme := (urls.Parse $link).Scheme }}
+    {{ $target := "" }}
+    {{ if not $scheme }}
+      {{ $link = .link | relLangURL }}
+    {{ else if in (slice "http" "https") $scheme }}
+      {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+    {{ end }}
+    <li>
+      <i class="fa-li {{ $pack }} {{ $pack_prefix }}-{{ .icon }} fa-2x" aria-hidden="true"></i>
+      <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}>{{.name|markdownify|emojify|safeHTML}}</a>
+    </li>
+    {{ end }}
+
+  </ul>
+
+  <div class="flex items-center flex-col mx-auto w-full justify-center mt-4 px-8 pb-5">
+
+  {{ range $index, $item := $block.content.buttons }}
+    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="flex items-center p-1 w-full rounded-md hover:scale-105 transition-all bg-gray-100 mb-3 max-w-3xl">
+    <div class="flex text-center w-full">
+      <div class="w-10 h-10 text-gray-700">
+        {{ with .icon }}
+          {{ partial "functions/get_icon" (dict "name" . "attributes" "height=\"40\" width=\"40\" class=\"rounded-sm\"") }}
+        {{ end }}
+      </div>
+      <div class="flex justify-center items-center font-semibold w-full text-gray-700 -ml-10">
+        {{ .text | markdownify | emojify }}
+      </div>
+      </div>
+    </a>
+  {{end}}
+  </div>
+
+{{ if and site.Params.features.map.provider $data.coordinates.latitude }}
+  <div>
+    <input id="map-provider" value="{{ lower site.Params.features.map.provider }}">
+    <input id="map-lat" value="{{ $data.coordinates.latitude }}">
+    <input id="map-lng" value="{{ $data.coordinates.longitude }}">
+    <input id="map-dir" value="{{ $addr_formatted }}">
+    <input id="map-zoom" value="{{ site.Params.features.map.zoom | default "15" }}">
+    <input id="map-api-key" value="{{ site.Params.features.map.api_key }}">
+  </div>
+  <div id="map"></div>
+  {{ end }}
+
+</div>

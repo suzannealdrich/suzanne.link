@@ -4,46 +4,63 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 # Appearance
-
 appearance:
-  theme_day: suzanne_link
-  theme_night: suzanne_link
-  font: minimal
-  font_size: L
+  mode: system
+  color: suzanne
 
 # SEO
-
 marketing:
   seo:
     site_type: Person
     local_business_type: ''
-    org_name: ''
-    description: ''
+    org_name: 'Suzanne Aldrich'
+    description: 'Suzanne Aldrich — Modern Infra Architect and Strategic Solutions Engineer at Cloudflare. Expert in secure, resilient architectures, Zero Trust, DNS, DDoS protection, and application security. Conference speaker on infrastructure resilience and emerging internet technologies.'
     twitter: 'SuzanneAldrich'
   analytics:
     google_analytics: ''
     baidu_tongji: ''
-    google_tag_manager: ''
-    microsoft_clarity: ''
+    plausible: ''
+    fathom: ''
+    pirsch: ''
   verification:
     google: ''
     baidu: ''
 
 # Site header
-
 header:
   navbar:
+    # Display the navigation bar?
     enable: true
-    align: l
-    show_logo: true
-    show_language: false
-    show_day_night: true
+    # Choose a built-in navigation blox or create your own
+    block: "navbar"
+    # Align menu links: `left`, `center`, or `right`
+    align: "left"
+    # Fix the navigation bar to the top of the page
+    fixed_to_top: true
+    logo:
+      # Logo text
+      text: "Suzanne's Links"
+      # Logo filename in `assets/media/` folder
+      filename: "icon.png"
+    # Shop a call-to-action button in the top right?
+    button:
+      enable: true
+      text: "Book Me to Speak"
+      url: "/#contact"
+    # Let the user choose between light or dark mode?
+    show_theme_chooser: true
+    # Let the user search from the navigation bar?
     show_search: true
+    # Attempt to automatically highlight the active menu link? Can be disabled for complex sites.
     highlight_active_link: true
+    # Show a language chooser (if you have translated your site content)?
+    show_translations: true
+    # If `show_translations` is enabled, do you wish to hide the current language name?
+    hide_language_name: false
 
 # Site footer
-
 footer:
+  block: minimal
   copyright:
     notice: '© {year} Me. <br/>suzanne.link by Suzanne Aldrich is licensed under {license}'
     license:
@@ -51,20 +68,16 @@ footer:
       allow_derivatives: false
       share_alike: true
       allow_commercial: false
+  # For multilingual sites, show a language chooser in the footer?
+  show_translations: true
 
 # Localization
-
 locale:
   date_format: 'Jan 2, 2006'
   time_format: '3:04 PM'
-  address_format: en-us
 
 # Site features
-
 features:
-  syntax_highlighter:
-    theme_light: github-light
-    theme_dark: dracula
   math:
     enable: false
   privacy_pack:
@@ -73,44 +86,3 @@ features:
     url: 'https://github.com/suzannealdrich/suzanne.link'
     content_dir: content
     branch: main
-  avatar:
-    gravatar: false
-    shape: circle
-  comment:
-    provider: ''
-    disqus:
-      shortname: ''
-      show_count: true
-    commento:
-      url: ''
-    giscus:
-      repo: ''
-      repo_id: ''
-      category: ''
-      category_id: ''
-  search:
-    provider: wowchemy
-    algolia:
-      app_id: ''
-      api_key: ''
-      index_name: ''
-      show_logo: false
-  map:
-    provider: 'mapnik'
-    api_key: ''
-    zoom: 15
-
-# Extensions
-
-extensions:
-  cms:
-    branch: main
-    local_backend: false
-  academicons:
-    enable: true
-
-# Security
-
-security:
-  # Allow frame for embedding speaker notes in slides
-  allow_frame: true
